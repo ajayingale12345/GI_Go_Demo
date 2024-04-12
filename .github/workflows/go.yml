@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        go-version: [ '1.19', '1.20', '1.21.x' ]
+        go-version: [  '1.21.x' ]
 
     steps:
       - uses: actions/checkout@v4
@@ -19,7 +19,7 @@ jobs:
         uses: actions/setup-go@v4
         with:
           go-version: ${{ matrix.go-version }}
-      - name: Install dependencies
+      - name: Install dependencies demo
         run: |
           go get .
           go get example.com/octo-examplemodule
